@@ -25,7 +25,7 @@ with tf.Session() as sess:
 with tf.Session() as sess:
   saver = tf.train.import_meta_graph(os.path.join(model_path, 'model.ckpt-****.meta'))
   saver.restore(sess, os.path.join(model_path, 'model.ckpt-****'))
-# use tf.trainable_variables() to get all variables in the model
-all_vars = tf.trainable_variables()
-for av in all_vars:
-  print('{}: {}'.format(av.name, sess.run(av).shape))
+  # use tf.trainable_variables() to get all variables in the model
+  all_vars = tf.trainable_variables()
+  for av in all_vars:
+    print('{}: {}'.format(av.name, sess.run(av).shape))
